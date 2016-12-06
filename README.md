@@ -1,0 +1,1 @@
+This is repository for studying, you can take or copy without a permission :)
