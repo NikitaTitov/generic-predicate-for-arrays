@@ -1,19 +1,16 @@
 package com.epam.learning.ArrayUtil;
 
+import com.epam.learning.ArrayUtil.Predicates.Predicate;
+
 import java.util.List;
-import java.util.stream.Stream;
 
 public class ArrayUtils {
 
-    public static Stream<? extends Number> moreThanNumber(List<? extends Number> numbers, double predicate) {
-        Stream<? extends Number> result = numbers.stream().filter(p -> p.doubleValue() > predicate);
-        return result;
+    public static <T> void filter(List<? extends T> list, Predicate<? super T> predicate) {
+        for (int i = 0; i < list.size(); i++) {
+            if (predicate.predicate(list.get(i))) {
+                list.remove(i);
+            }
+        }
     }
-
-    public static Stream<? extends String> haveName(List<? extends String> names, String name) {
-        Stream<? extends String> result = names.stream().filter(p -> p.matches(name + "(.*)"));
-        return result;
-    }
-
-
 }
