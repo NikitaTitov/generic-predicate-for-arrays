@@ -2,6 +2,8 @@ package com.epam.learning.ArrayUtil;
 
 import com.epam.learning.ArrayUtil.Predicates.Predicate;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ArrayUtils {
@@ -12,5 +14,11 @@ public class ArrayUtils {
                 list.remove(i);
             }
         }
+    }
+
+    public static <T extends Comparable<? super T>> T findMiddleValue(List<? extends T> list){
+        List<T> sortedList = new ArrayList<>(list);
+        Collections.sort(sortedList);
+        return sortedList.get(sortedList.size()/2);
     }
 }

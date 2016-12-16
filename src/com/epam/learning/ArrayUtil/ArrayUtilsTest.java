@@ -50,4 +50,17 @@ public class ArrayUtilsTest {
         filter(firstNameList,new NameFilter("Alice"));
         assertArrayEquals(firstNameList.toArray(), secondNameList.toArray());
     }
+
+    @Test
+    public void testFindMiddleValue() throws Exception {
+        List<Integer> firstIntegerTestList = new ArrayList<>();
+        firstIntegerTestList.add(0);
+        firstIntegerTestList.add(24);
+        firstIntegerTestList.add(46);
+        firstIntegerTestList.add(16);
+        firstIntegerTestList.add(36);
+        firstIntegerTestList.add(77);
+        firstIntegerTestList.add(35);
+        assertTrue(findMiddleValue(firstIntegerTestList).equals(35));
+    }
 }
